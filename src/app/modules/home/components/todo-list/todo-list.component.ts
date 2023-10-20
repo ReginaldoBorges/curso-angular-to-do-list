@@ -11,10 +11,11 @@ import { withDisabledInitialNavigation } from '@angular/router';
 })
 export class TodoListComponent {
 
-  public taskList: Array<TaskList> = [
-    {task: "Nova task 1", checked: true},
-    {task: "Nova task 2", checked: false},
-  ];
+  public taskList: Array<TaskList> = [];
+
+  public setEmitTasklist(event: string) {
+    this.taskList.push({task: event, checked: false});
+  }
 
   public deleteItemTaskList(event: number) {
     this.taskList.splice(event, 1);
